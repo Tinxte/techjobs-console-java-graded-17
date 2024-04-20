@@ -66,6 +66,7 @@ public class TechJobs {
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
                 }
+                //TODO: else choice is "findByValue"
             }
         }
     }
@@ -124,23 +125,19 @@ public class TechJobs {
             System.out.print("No Results");
         } else {
 
-            System.out.println("\n*****");
 
             for (int i = 0; i < someJobs.size(); i++) {
 //            System.out.println("array list indexes");
 //            for (<HashMap<String, String>> : someJobs) {
 //            System.out.println(someJobs.get(i));
 
+                System.out.println("\n*****");
+
+
                 for (Map.Entry job : someJobs.get(i).entrySet()) {
 
 //                System.out.println(job);
 
-//                System.out.println(
-//                        "***** \n" +
-//                                someJobs.get(i).keySet() +
-//                        ": " +
-//                                someJobs.get(i).getValue()
-//                );
 
                     System.out.println(
 
@@ -149,10 +146,9 @@ public class TechJobs {
                                     job.getValue()
 
                     );
-                }
-                System.out.println("*****");
-
+                } System.out.println("*****");
             }
         }
+
     }
 }
