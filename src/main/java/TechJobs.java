@@ -66,7 +66,6 @@ public class TechJobs {
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
                 }
-                //TODO: else choice is "findByValue"
             }
         }
     }

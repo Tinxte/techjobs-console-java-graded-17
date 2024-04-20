@@ -32,9 +32,12 @@ public class JobData {
         ArrayList<String> values = new ArrayList<>();
 
         for (HashMap<String, String> row : allJobs) {
-            String aValue = row.get(field);
 
-            if (!values.contains(aValue)) {
+            String aValue = row.get(field);
+            String aValueCaseCheck = aValue.toUpperCase();
+
+
+            if (!values.contains(aValueCaseCheck)) {
                 values.add(aValue);
             }
         }
@@ -71,8 +74,10 @@ public class JobData {
         for (HashMap<String, String> row : allJobs) {
 
             String aValue = row.get(column);
+            String aValueCaps = aValue.toUpperCase();
+            String valueCaps = value.toUpperCase();
 
-            if (aValue.contains(value)) {
+            if (aValueCaps.contains(valueCaps)) {
                 jobs.add(row);
             }
         }
@@ -97,9 +102,12 @@ public class JobData {
 
 //            for (int i = 0; i < row.size; i++) {
             for (Map.Entry<String, String> key: row.entrySet()) {
-//                String aValue = row.getValue();
+                String aValue = key.getValue();
+                aValue.toUpperCase();
 
-                if (row.containsValue(value)) {
+                String input = value;
+                value.toUpperCase();
+                if (aValue.contains(input)) {
                     jobs.add(row);
                     break;
                 }
